@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyapriy | B.Sc. Mathematics - Semester 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #1a2a3a; --accent: #00d2ff; --bg: #f0f2f5; --white: #ffffff; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg); margin: 0; display: flex; scroll-behavior: smooth; }
+        
+        /* Sidebar - Clean Version */
+        .sidebar { width: 260px; height: 100vh; position: fixed; background: var(--primary); color: white; overflow-y: auto; z-index: 100; }
+        .sidebar-header { padding: 30px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-group { padding: 15px 0; }
+        .nav-label { padding: 10px 25px; font-size: 0.75rem; color: #636e72; text-transform: uppercase; letter-spacing: 1px; }
+        .sidebar a { padding: 12px 25px; text-decoration: none; color: #a0aec0; display: flex; align-items: center; gap: 12px; transition: 0.3s; font-size: 0.9rem; }
+        .sidebar a:hover { color: white; background: rgba(255,255,255,0.05); border-left: 4px solid var(--accent); }
+
+        /* Main Content */
+        .main-wrapper { margin-left: 260px; width: 100%; }
+        header { background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%); color: white; padding: 50px 20px; text-align: center; }
+        
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 25px; }
+
+        /* Content Structure */
+        .semester-box { margin-bottom: 50px; }
+        .semester-head { font-size: 1.8rem; color: var(--primary); margin-bottom: 25px; padding-bottom: 10px; border-bottom: 3px solid var(--accent); display: inline-block; }
+        
+        .paper-section { background: #e9ecef; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
+        .paper-title { font-size: 1.1rem; font-weight: 700; color: #2d3436; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .paper-title i { color: var(--accent); }
+
+        .pdf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .pdf-card { background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #dee2e6; transition: 0.3s; }
+        .pdf-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .pdf-card i { font-size: 2.2rem; color: #ff4757; margin-bottom: 12px; }
+        
+        .btn-group { display: flex; gap: 5px; margin-top: 15px; }
+        .btn { flex: 1; padding: 8px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.75rem; font-weight: 600; text-decoration: none; text-align: center; }
+        .btn-v { background: #f8f9fa; color: #2d3436; border: 1px solid #ddd; }
+        .btn-d { background: var(--primary); color: white; }
+
+        /* Feedback Section */
+        .action-card { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; overflow: hidden; }
+        
+        footer { text-align: center; padding: 30px; background: var(--primary); color: #a0aec0; }
+
+        /* PDF Viewer Overlay */
+        .viewer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; z-index: 2000; flex-direction: column; }
+        iframe.pdf-viewer { flex-grow: 1; border: none; }
+        
+        @media (max-width: 900px) { .sidebar { display: none; } .main-wrapper { margin-left: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-header"><h2>SATYAPRIY</h2></div>
+    <div class="nav-group">
+        <div class="nav-label">Library</div>
+        <a href="#m-sem5"><i class="fas fa-folder-open"></i> Semester 5</a>
+        <a href="#feedback-section"><i class="fas fa-pen-nib"></i> Submit Feedback</a>
+    </div>
+</div>
+
+<div class="main-wrapper">
+    <header>
+        <h1>B.Sc. Semester-5 Notes & PYQ</h1>
+        <p>Semester 5 Study Resources</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SEMESTER 5 CONTENT -->
+        <div id="m-sem5" class="semester-box">
+            <div class="semester-head">Semester 5 Content</div>
+            
+            <!-- Paper 1 -->
+            <div class="paper-section">
+                <div class="paper-title"><i class="fas fa-book"></i> Paper-1 (not working,...)</div>
+                <div class="pdf-grid">
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-1</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div>
+
+			 <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-2</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-3</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-4</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="paper-section">
+                <div class="paper-title"><i class="fas fa-book"></i> Paper-2</div>
+                <div class="pdf-grid">
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-1</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('1P9meIqo0EQ3mRZ0avRweWWPkOXHCWD4P')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('1P9meIqo0EQ3mRZ0avRweWWPkOXHCWD4P')">Download</button>
+                        </div>
+                    </div>
+			 <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-2</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('1PC5lCX2_FtG9SPpuuJSVNTmW2UkAKKCC')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('1PC5lCX2_FtG9SPpuuJSVNTmW2UkAKKCC')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-3</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('1PIFeVPoVtvJ2dNNoeO64YDPZtJQo2yWX')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('1PIFeVPoVtvJ2dNNoeO64YDPZtJQo2yWX')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-4</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('1PPsTdO4dublL7sk_efSi5u6ZV1D3Ubmk')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('1PPsTdO4dublL7sk_efSi5u6ZV1D3Ubmk')">Download</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+	  <!-- Paper 3 -->
+            <div class="paper-section">
+                <div class="paper-title"><i class="fas fa-book"></i> Paper-3(not working,...)</div>
+                <div class="pdf-grid">
+                    <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-1</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div>
+
+			 <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-2</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-3</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div> <div class="pdf-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5>Unit-4</h5>
+                        <div class="btn-group">
+                            <button class="btn btn-v" onclick="viewPDF('ID_DALEIN')">View</button>
+                            <button class="btn btn-d" onclick="downloadPDF('ID_DALEIN')">Download</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        <!-- FEEDBACK SECTION (Auto-save to Google Drive) -->
+        <div id="feedback-section" class="action-card" style="border-top: 5px solid var(--accent);">
+            <div style="padding: 20px 30px;">
+                <h3 style="color: var(--primary); margin: 0;"><i class="fas fa-comment-dots"></i> Website Feedback</h3>
+            </div>
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSftPYB1SSj1PF8mK71U1TQuCqJo7A_En65qoDw2mUQ5tgcVXA/viewform?embedded=true" 
+                width="100%" 
+                height="650" 
+                frameborder="0">
+                Loading…
+            </iframe>
+        </div>
+
+    </div>
+
+    <footer><p>&copy; 2026 Satyapriy | Focused Learning</p></footer>
+</div>
+
+<!-- PDF Viewer Overlay -->
+<div class="viewer-overlay" id="viewer">
+    <div style="background:#000; padding:15px; color:white; display:flex; justify-content:space-between; align-items:center;">
+        <span>Quick Preview</span>
+        <button onclick="closeViewer()" style="background:none; border:none; color:white; font-size:30px; cursor:pointer;">&times;</button>
+    </div>
+    <iframe class="pdf-viewer" id="pdfFrame"></iframe>
+</div>
+
+<script>
+    function viewPDF(id) {
+        if(id === 'ID_DALEIN') { alert('Please update the Google Drive File ID.'); return; }
+        document.getElementById('pdfFrame').src = `https://drive.google.com/file/d/${id}/preview`;
+        document.getElementById('viewer').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewer() {
+        document.getElementById('viewer').style.display = 'none';
+        document.getElementById('pdfFrame').src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    function downloadPDF(id) {
+        if(id === 'ID_DALEIN') { alert('Please update the Google Drive File ID.'); return; }
+        window.open(`https://drive.google.com/uc?export=download&id=${id}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
